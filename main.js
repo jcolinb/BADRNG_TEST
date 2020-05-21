@@ -3,7 +3,7 @@ import {list} from './dredge.js'
 
 const parse_response = pipe(JSON.parse,({data})=>data[0],({image_uris})=>image_uris,({png})=>document.getElementById('card').style.backgroundImage = `url(${png})`)
 
-const load_card = (nom) => fetch(`https:\/\/api.scryfall.com/cards/search?q=${nom}`).then(parse_response)
+const load_card = (nom) => fetch(`https:\/\/api.scryfall.com/cards/search?q=${nom.replace(/ /gi,'+')}`).then(parse_response)
 
 const build_list = ({nom,num}) => {
   const item = document.createElement('div');
