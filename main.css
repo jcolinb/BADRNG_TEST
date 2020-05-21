@@ -1,0 +1,62 @@
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 100px 50px repeat(4,1fr);
+    grid-template-areas:
+      "h h h h"
+      "n n n n"
+      "m m m m"
+      "m m m m"
+      "m m m m"
+      "m m m m";
+}
+
+header {
+    background-color: black;
+    color: white;
+    grid-area: h;
+}
+
+nav {
+    background-color: pink;
+    grid-area: n;
+}
+
+#display {
+    background-color: yellow;
+    grid-area: m;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas:
+      "l l c c"
+      "l l c c"
+      "l l c c"
+      "l l . .";
+}
+
+#list {
+    background-color: red;
+    grid-area: l;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#card {
+    background-color: blue;
+    grid-area: c;
+}
+
+@media screen and (max-width:770px) {
+    #display {
+    grid-template-areas:
+      "c c . ."
+      "c c . ."
+      "l l . ."
+      "l l . .";
+    }
+}
