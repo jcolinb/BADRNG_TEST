@@ -49,6 +49,9 @@ nav {
 #card {
     background-color: blue;
     grid-area: c;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 @media screen and (max-width:770px) {
